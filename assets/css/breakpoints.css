@@ -1,4 +1,5 @@
 @media (max-width: 992px) {
+
   /* @@@@@@@@@@@@@@@@@@ home @@@@@@@@@@@@@@@@@ */
   .home__container {
     gap: 1rem;
@@ -57,6 +58,7 @@
     width: 100%;
     display: block;
   }
+
   .message__btn {
     width: 100%;
   }
@@ -96,6 +98,7 @@
 }
 
 @media (max-width: 767px) {
+
   .nav__toggle,
   .nav__close {
     display: flex;
@@ -170,7 +173,10 @@
   /* @@@@@@@@@@@@@@@@@@ giving @@@@@@@@@@@@@@@@@ */
 
   .giving__container {
-    grid-template-columns: repeat(2, 200px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: 2rem;
   }
 
@@ -220,6 +226,7 @@
     width: 60%;
     display: initial;
   }
+
   .message__btn {
     width: 60%;
   }
@@ -252,8 +259,12 @@
   /* @@@@@@@@@@@@@@@@@@ giving @@@@@@@@@@@@@@@@@ */
 
   .giving__container {
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: 2rem;
+
   }
 
   .giving__description {
@@ -283,9 +294,11 @@
   .message .container {
     padding: 3rem 2rem;
   }
+
   .message__input {
     width: 100%;
   }
+
   .message__btn {
     width: 100%;
   }
@@ -302,6 +315,7 @@
 }
 
 @media (max-width: 374px) {
+
   /* @@@@@@@@@@@@@@@@@@ home @@@@@@@@@@@@@@@@@ */
   .home__container {
     padding: 2rem 0 0 0;
