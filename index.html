@@ -25,6 +25,7 @@
 </head>
 
 <body>
+  <div id="tsparticles" style="height: 100vh;width: 100vw;position: absolute;"></div>
   <!-- @@@@@@@@@@@@@@@@@@@ pre loader @@@@@@@@@@@@@@@@@@@@ -->
   <div class="preloader" id="preloader">
     <img src="./assets/img/preloader.png" alt="" class="preloader__img" />
@@ -72,7 +73,7 @@
             <p class="home__description">
               Qu'est ce que te réserve ce dernier cadeau 🤷‍♀️
             </p>
-            <a href="#first" class="btn">Déballer mon cadeau !</a>
+            <a href="#first" id="btn" class="btn">Déballer mon cadeau !</a>
           </div>
         </div>
       </div>
@@ -324,6 +325,59 @@
 
     <!-- @@@@@@@@@@@@@@@@@@@ main JS @@@@@@@@@@@@@@@@@@@@ -->
     <script src="./assets/js/main.js"></script>
+
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script type="text/javascript">
+      const btn = document.querySelector('#btn');
+      const canvas = document.querySelector('#confetti-canvas');
+
+
+
+      function onButtonClick() {
+        var end = Date.now() + (15 * 1000);
+
+        // go Buckeyes!
+        var colors = ['#bb0000', '#ffffff'];
+
+        (function frame() {
+          confetti({
+            particleCount: 2,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 },
+            colors: colors
+          });
+          confetti({
+            particleCount: 2,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 },
+            colors: colors
+          });
+
+          if (Date.now() < end) {
+            requestAnimationFrame(frame);
+          }
+        }());
+      }
+      btn.addEventListener('click', onButtonClick);
+    </script>
+
+    <!-- CSS -->
+    <style>
+      #confetti-canvas {
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+      }
+    </style>
 </body>
 
 </html>
